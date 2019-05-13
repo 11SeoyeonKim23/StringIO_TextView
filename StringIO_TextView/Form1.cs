@@ -10,7 +10,10 @@ using System.Windows.Forms;
 namespace StringIO_TextView
 {
     public partial class Form1 : Form
+                                                // : 표시는 상속,구현의 의미를 담고있따
     {
+        private string OrgStr;
+
         public Form1()
         {
             InitializeComponent();
@@ -18,12 +21,17 @@ namespace StringIO_TextView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.OrgStr = this.lblResult.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
         }
     }
 }
